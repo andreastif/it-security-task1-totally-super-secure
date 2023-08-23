@@ -26,7 +26,6 @@ public class User {
 
     private String username;
 
-    @Size(min = 0, max = 4)
-    //@Pattern() //stoppa in en regex www.regex101.com
+    @Pattern(regexp = "^(?=.*[A-Z])(?=.*[!@#$%^&*()_+{}\\[\\]:;<>,.?~\\\\/-]).{8,}$") // T.ex: Password!123
     private String password;
 }

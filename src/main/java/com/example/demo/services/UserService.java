@@ -10,6 +10,8 @@ public interface UserService {
 
     String newUser(Model model);
 
+    Boolean logInSuccessful(Model model);
+
     List<User> findAll();
 
 }

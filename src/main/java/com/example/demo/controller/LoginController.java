@@ -33,13 +33,19 @@ public class LoginController {
 
     @PostMapping("/login")
     public String postLogin(@Valid User user, BindingResult bindingResult, Model model) {
+
         if (bindingResult.hasErrors()) {
             log.info("Bindingresult: " + bindingResult);
             model.addAttribute("msg", "Something went wrong");
             return "loginpage";
         }
+
         model.addAttribute("user", user);
-        return "successful";
+
+        if (userServiceImpl.logInSuccessful(model)) {
+            return "successful";
+        } else
+            return "loginpage";
     }
 
     @GetMapping("/create")

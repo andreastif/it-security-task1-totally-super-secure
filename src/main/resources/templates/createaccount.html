@@ -19,7 +19,7 @@
 
     .te {
       font-size: 20px;
-      font-family: "tahoma", serif
+      font-family: "tahoma", serif;
       text-align: center;
 
     }
@@ -37,13 +37,16 @@
 
   <p class="te">Sign up here:</p>
   <div class="registration">
-    <form action="/response" method="post">
+    <form method="post">
       <label for="username">Choose a username:</label><br>
       <input type="text" id="username" name="username" value=""><br>
       <label for="password">Choose a password:</label><br>
       <input type="text" id="password" name="password" value=""><br><br>
       <input type="submit" value="Register">
     </form>
+  </div>
+  <div>
+    <p th:text='${error}'></p>
   </div>
 
 </div>

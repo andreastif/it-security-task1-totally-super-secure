@@ -36,13 +36,16 @@
 
     <p class="te">Log in:</p>
     <div class="Login">
-        <form action="/response" method="post">
+        <form method="post">
             <label for="username">Username:</label><br>
             <input type="text" id="username" name="username" value=""><br>
             <label for="password">Password:</label><br>
             <input type="text" id="password" name="password" value=""><br><br>
             <input type="submit" value="Login">
         </form>
+    </div>
+    <div>
+        <p th:text='${error}'></p>
     </div>
 
 </div>

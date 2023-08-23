@@ -32,24 +32,6 @@ public class LoginController {
         return "loginpage";
     }
 
-//något sådant här möjligtvis
-    /*
-    @PostMapping("/response")
-    public String showLoginResponse(Model model) {
-        if (username and password exists...){
-            model.addAttribute("msg", "Login successful.");
-        }
-        else if (username and password doesnt exist) {
-            model.addAttribute("msg", "Registration successful.");
-
-        }
-        else (if username or password is null) {
-            model.addAttribute("msg", "All fields are required.");
-        }
-
-        return "response.html";
-    }
-    */
 
     @PostMapping("/login")
     public String postLogin(@Valid User user, BindingResult bindingResult, Model model) {

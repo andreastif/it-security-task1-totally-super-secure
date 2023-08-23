@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <style>
+
+        h2 {
+            margin: auto;
+        }
+        h3 {
+            margin: auto;
+        }
+        .btn {
+            margin: auto;
+        }
+
+    </style>
+    <title>Super secure application</title>
+</head>
+<body>
+
+<br>
+<h2>Your account was created successfully!</h2>
+<br>
+<h3>Continue to login page</h3>
+
+
+
+        <a th:href="@{/users/login}">
+            <input type="button" value="Continue" class="btn" /></a>
+
+
+</body>
+</html>

@@ -4,10 +4,15 @@
     <meta charset="UTF-8">
     <style>
 
-        .text {
-            background-color: white;
+        h2 {
+            margin: auto;
         }
-
+        h3 {
+            margin: auto;
+        }
+        .btn {
+            margin: auto;
+        }
 
     </style>
     <title>Super secure application</title>
@@ -15,10 +20,15 @@
 <body>
 
 <br>
-<div class="text">
-    <p th:text="${msg}"></p>
-    </div>
+<h2>Your account was created successfully!</h2>
+<br>
+<h3>Continue to login page</h3>
 
-</div>
+
+
+        <a th:href="@{/users/login}">
+            <input type="button" value="Continue" class="btn" /></a>
+
+
 </body>
 </html>

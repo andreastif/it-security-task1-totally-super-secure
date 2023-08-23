@@ -24,10 +24,11 @@ public class UserServiceImpl implements UserService {
     public String newUser(Model model) {
         User user = (User) model.getAttribute("user");
         if (!userRepository.existsByUsername(user.getUsername())) {
-            model.addAttribute("user", userRepository.save(user));
-            return "successful";
+            User savedUser = userRepository.save(user);
+            model.addAttribute("msg", "Created user " + savedUser.getUsername());
+            return "response";
         } else {
-            model.addAttribute("error", "User already exists");
+            model.addAttribute("msg", "User already exists");
             return "createaccount";
         }
     }

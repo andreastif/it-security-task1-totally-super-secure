@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <style>
+
+
+    .text {
+      background-color: white;
+      text-align: center;
+    }
+
+    .registration {
+      background-color: #D3D3D3;
+      padding: 25px;
+      width: fit-content;
+      margin: auto;
+    }
+
+    .te {
+      font-size: 20px;
+      font-family: "tahoma", serif
+      text-align: center;
+
+    }
+
+
+
+  </style>
+  <title>Super secure application</title>
+</head>
+<body>
+
+<br>
+<div class="all">
+<div class="text">
+
+  <p class="te">Sign up here:</p>
+  <div class="registration">
+    <form action="/response" method="post">
+      <label for="username">Choose a username:</label><br>
+      <input type="text" id="username" name="username" value=""><br>
+      <label for="password">Choose a password:</label><br>
+      <input type="text" id="password" name="password" value=""><br><br>
+      <input type="submit" value="Register">
+    </form>
+  </div>
+
+</div>
+</div>
+</body>
+</html>

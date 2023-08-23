@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+
 import com.example.demo.domain.User;
 import com.example.demo.repositories.UserRepository;
 import jakarta.validation.Valid;
@@ -31,6 +32,23 @@ public class LoginController {
     @GetMapping("/login")
     public String getLogin(){
         return "loginpage";
+
+//något sådant här möjligtvis
+    /*
+    @PostMapping("/response")
+    public String showLoginResponse(Model model) {
+        if (username and password exists...){
+            model.addAttribute("msg", "Login successful.");
+        }
+        else if (username and password doesnt exist) {
+            model.addAttribute("msg", "Registration successful.");
+
+        }
+        else (if username or password is null) {
+            model.addAttribute("msg", "All fields are required.");
+        }
+
+        return "response.html";
     }
 
     @PostMapping("/login")
@@ -54,3 +72,5 @@ public class LoginController {
 
 
 }
+
+     */

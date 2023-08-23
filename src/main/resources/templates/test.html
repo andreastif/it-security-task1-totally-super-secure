@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">Order Nr</th>
+            <th scope="col">Skapad</th>
+            <th scope="col">Senast Updaterad</th>
+            <th scope="col">Se Produkter</th>
+        </tr>
+        </thead>
+        <tr th:each="user : ${users}">
+            <td th:text="${user.getId()}"></td>
+            <td th:text="${user.getUsername()}"></td>
+            <td th:text="${user.getPassword()}"></td>
+        </tr>
+    </table>
+</body>
+</html>
+

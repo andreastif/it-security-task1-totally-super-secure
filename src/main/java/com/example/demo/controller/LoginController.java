@@ -4,19 +4,13 @@ package com.example.demo.controller;
 import com.example.demo.domain.User;
 import com.example.demo.repositories.UserRepository;
 import jakarta.validation.Valid;
-import lombok.extern.log4j.Log4j;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-
-import java.util.List;
 
 @Controller
 @Slf4j
@@ -30,8 +24,9 @@ public class LoginController {
     }
 
     @GetMapping("/login")
-    public String getLogin(){
+    public String getLogin() {
         return "loginpage";
+    }
 
 //något sådant här möjligtvis
     /*
@@ -50,6 +45,7 @@ public class LoginController {
 
         return "response.html";
     }
+    */
 
     @PostMapping("/login")
     public String postLogin(@Valid User user, BindingResult bindingResult, Model model){
@@ -72,5 +68,3 @@ public class LoginController {
 
 
 }
-
-     */

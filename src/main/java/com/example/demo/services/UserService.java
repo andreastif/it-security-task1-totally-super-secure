@@ -1,6 +1,7 @@
 package com.example.demo.services;
 
 import com.example.demo.domain.User;
+import com.example.demo.domain.UserEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 
@@ -12,6 +13,6 @@ public interface UserService {
 
     Boolean logInSuccessful(Model model);
 
-    List<User> findAll();
+    List<UserEntity> findAll();
 
 }

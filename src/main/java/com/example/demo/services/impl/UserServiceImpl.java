@@ -1,6 +1,7 @@
 package com.example.demo.services.impl;
 
 import com.example.demo.domain.User;
+import com.example.demo.domain.UserEntity;
 import com.example.demo.repositories.UserRepository;
 import com.example.demo.services.UserService;
 import lombok.extern.slf4j.Slf4j;
@@ -30,8 +31,12 @@ public class UserServiceImpl implements UserService {
         if (!userRepository.existsByUsername(user.getUsername())) {
 
             String encryptedPassword = passwordEncoder.encode(user.getPassword());
-            user.setPassword(encryptedPassword);
-            User savedUser = userRepository.save(user);
+
+            UserEntity savedUser = userRepository.save(
+                    UserEntity.builder()
+                            .username(user.getUsername())
+                            .password(encryptedPassword)
+                            .build());
 
             model.addAttribute("msg", "Created user " + savedUser.getUsername());
             return "response";
@@ -44,10 +49,13 @@ public class UserServiceImpl implements UserService {
     @Override
     public Boolean logInSuccessful(Model model) {
         User user = (User) model.getAttribute("user");
-        return passwordEncoder.matches(user.getPassword(), userRepository.findByUsername(user.getUsername()).getPassword());
+
+        return passwordEncoder.matches(user.getPassword(),
+                userRepository.findByUsername(
+                        user.getUsername()).getPassword());
     }
 
-    public List<User> findAll() {
+    public List<UserEntity> findAll() {
         return userRepository.findAll();
     }
 

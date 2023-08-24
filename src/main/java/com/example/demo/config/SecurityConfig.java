@@ -17,7 +17,8 @@ public class SecurityConfig {
         return http
                 .authorizeHttpRequests(request ->
                         request.anyRequest().permitAll())
-                .csrf(csrf ->  csrf.disable())
+                .csrf(csrf ->  csrf.disable()) // csrf, så post fungerar
+                .headers(headers -> headers.disable()) // för att kunna se H2 console
                 .build();
     }
 
